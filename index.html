@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postman Form</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color:pink;
+        }
+    </style>
+</head>
+<body>
+    <h1>Postman Form</h1>
+    <form action="/" method="POST">
+        <label for="Name">Name:</label><br>
+        <input type="text" id="Name" name="Name"><br>
+        <label for="Age">Age:</label><br>
+        <input type="text" id="Age" name="Age"><br>
+        <label for="RollNo">RollNo:</label><br>
+        <input type="text" id="RollNo" name="RollNo"><br>
+        <label for="Marks">Marks:</label><br>
+        <input type="text" id="Marks" name="Marks"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    
+    <h2>Submitted Data:</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>RollNo</th>
+            <th>Marks</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.Name }}</td>
+            <td>{{ item.Age }}</td>
+            <td>{{ item.RollNo }}</td>
+            <td>{{ item.Marks }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
